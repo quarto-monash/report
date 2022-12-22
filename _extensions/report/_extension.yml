@@ -1,0 +1,8 @@
+title: Monash Working Paper Format Template
+author: Rob J Hyndman
+version: 0.1.0
+contributes:
+  formats:
+    pdf:
+      template: monashreport.tex
+      pdf-engine: pdflatex

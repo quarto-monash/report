@@ -1,0 +1,49 @@
+---
+title: "Expert advice from experts"
+author:
+- familyname: Curie
+  othernames: Marie
+  qualifications: Nobel Prize, PhD
+- familyname: Curie
+  othernames: Pierre
+  qualifications: Nobel Prize, PhD
+email: mcurie.notreal@gmail.com
+phone: (03) 9905 2478
+department: Department of\newline Econometrics &\newline Business Statistics
+organization: Acme Corporation
+number-sections: true
+fig-height: 5
+fig-width: 8
+cite-method: biblatex
+bibliography: references.bib
+biblio-style: authoryear-comp
+linestretch: 1.5
+format: report-pdf
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+
+# Introduction
+
+In a famous paper, @BC64 introduced a family of transformations \dots
+
+```{r}
+#| label: fig-density
+#| fig-cap: Simulated data from a N(0,1) distribution.
+library(tidyverse)
+set.seed(2022-12-20)
+df <- tibble(x = rnorm(200))
+df |>
+  ggplot(aes(x=x)) +
+  geom_density(bw = "SJ") +
+  geom_rug()
+```
+
+@fig-density shows a kernel density estimate of simulated data from a N(0,1) distribution. The sample variance is given by
+$$
+  s^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i-\bar{x})^2 = `r round(sd(df$x), 2)`.
+$$ {#eq-s2}
+Note that @eq-s2 is an unbiased estimate of the variance, but it is not the maximum likelihood estimate [@Rice2007, p.269].
