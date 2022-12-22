@@ -6,17 +6,17 @@
 This is a Quarto template that assists you in creating a Monash
 University report.
 
-## Creating a new working paper
+## Creating a new report
 
-You can use this as a template to create a working paper. To do this,
-use the following command:
+You can use this as a template to create a report. To do this, use the
+following command:
 
 ``` bash
-quarto use template numbats/monash-quarto-workingpaper
+quarto use template numbats/monash-quarto-report
 ```
 
 This will install the extension and create an example qmd file that you
-can use as a starting place for your working paper.
+can use as a starting place for your report.
 
 ## Installation for existing document
 
@@ -25,7 +25,7 @@ document. From the quarto project or document directory, run the
 following command to install this format:
 
 ``` bash
-quarto install extension numbats/monash-quarto-workingpaper
+quarto install extension numbats/monash-quarto-report
 ```
 
 ## Example
