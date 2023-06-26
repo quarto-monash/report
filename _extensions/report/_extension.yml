@@ -6,9 +6,3 @@ contributes:
     pdf:
       template: monashreport.tex
       pdf-engine: pdflatex
-      format-resources:
-        - AACSB.png
-        - AMBA.png
-        - EQUIS.png
-        - MBSportrait.jpg
-        - monash2.png
