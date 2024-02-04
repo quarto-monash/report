@@ -1,0 +1,134 @@
+% Placement of logos
+
+\RequirePackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\def\placefig#1#2#3#4{\begin{textblock}{.1}(#1,#2)\rlap{\includegraphics[#3]{#4}}\end{textblock}}
+
+% Title and date
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(subtitle)$
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{$subtitle$}
+$endif$
+\date{$date$}
+
+\def\Date{\number\day}
+\def\Month{\ifcase\month\or
+ January\or February\or March\or April\or May\or June\or
+ July\or August\or September\or October\or November\or December\fi}
+\def\Year{\number\year}
+
+%%%% PAGE STYLE FOR FRONT PAGE OF REPORTS
+
+\makeatletter
+\def\organization#1{\gdef\@organization{#1}}
+\def\telephone#1{\gdef\@telephone{#1}}
+\def\email#1{\gdef\@email{#1}}
+\makeatother
+$if(organization)$
+  \organization{$organization$}
+$else$
+  \organization{}
+$endif$
+
+$if(department)$
+  \def\name{$department$}
+$else$
+  \def\name{Department of\newline Econometrics \&\newline Business Statistics}
+$endif$
+
+$if(phone)$
+  \telephone{$phone$}
+$else$
+  \telephone{(03) 9903 4416}
+$endif$
+
+$if(email)$
+  \email{$email$}
+$else$
+  \email{BusEco-Econometrics@monash.edu}
+$endif$
+
+\def\webaddress{\url{https://www.monash.edu/business/ebs}}
+\def\abn{12 377 614 012}
+\def\extraspace{\vspace*{1.6cm}}
+\makeatletter
+\def\contactdetails{\faicon{phone} & \@telephone \\
+                    \faicon{envelope} & \@email}
+\makeatother
+
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+
+%%%% FRONT PAGE OF REPORTS
+
+\def\reporttype{Report for}
+
+\long\def\front#1#2#3{
+\newpage
+\begin{textblock}{7}(12.7,28.2)\hfill
+\includegraphics[height=0.6cm]{AACSB}~~~
+\includegraphics[height=0.6cm]{EQUIS}~~~
+\includegraphics[height=0.6cm]{AMBA}
+\end{textblock}
+\begin{singlespacing}
+\thispagestyle{empty}
+\vspace*{-1.4cm}
+\hspace*{-1.4cm}
+\hbox to 16cm{
+  \hbox to 6.5cm{\vbox to 14cm{\vbox to 25cm{
+    \includegraphics[width=6cm]{monash2}
+    \vfill
+    \includegraphics[width=2cm]{MBSportrait}
+    \vspace{0.4cm}
+    \par
+    \parbox{6.3cm}{\raggedright
+      \sf\color[rgb]{0.00,0.00,0.70}
+      {\large\textbf{\name}}\par
+      \vspace{.7cm}
+      \tabcolsep=0.12cm\sf\small
+      \begin{tabular}{@{}ll@{}}\contactdetails
+      \end{tabular}
+      \vspace*{0.3cm}\par
+      ABN: \abn\par
+    }
+  }\vss}\hss}
+  \hspace*{0.2cm}
+  \hbox to 1cm{\vbox to 14cm{\rule{1pt}{26.8cm}\vss}\hss\hfill}
+  \hbox to 10cm{\vbox to 14cm{\vbox to 25cm{
+      \vspace*{3cm}\sf\raggedright
+      \parbox{10cm}{\sf\raggedright\baselineskip=1.2cm
+         \fontsize{24.88}{30}\color[rgb]{0.70,0.00,0.00}\sf\textbf{#1}}
+      \par
+      \vfill
+      \large
+      \vbox{\parskip=0.8cm #2}\par
+      \vspace*{2cm}\par
+      \reporttype\\[0.3cm]
+      \hbox{#3}%\\[2cm]\
+      \vspace*{1cm}
+      {\large\sf\textbf{\Date~\Month~\Year}}
+   }\vss}
+  }}
+\end{singlespacing}
+\newpage
+}
+
+\makeatletter
+\def\maketitle{\front{\expandafter{\@title}}{\@author}{\@organization}}
+\makeatother
+
+% Authors
+
+\author{\sf$for(by-author)${\Large\textbf{$by-author.name.literal$} $if(by-author.degrees)$\\\large $by-author.degrees$$endif$\\[0.5cm]}$endfor$}
+\lfoot{\sf $for(by-author)$$by-author.name.family$$sep$, $endfor$: $date$}
