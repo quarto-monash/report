@@ -2,3 +2,4 @@
 template_files/
 template.tex
 .Rproj.user
+.quarto/
