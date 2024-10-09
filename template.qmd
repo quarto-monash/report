@@ -25,7 +25,7 @@ set.seed(2022-12-20)
 df <- tibble(x = rnorm(200))
 df |>
   ggplot(aes(x=x)) +
-  geom_density(bw = "SJ") +
+  geom_density(bw = "sj") +
   geom_rug()
 ```
 
