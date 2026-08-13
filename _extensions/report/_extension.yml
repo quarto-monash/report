@@ -42,23 +42,9 @@ contributes:
       template-partials:
         - "before-title.tex"
         - "title.tex"
+      latex-input-paths:
+        - hack/tex/latex/hack
       format-resources:
-        - hack/tex/latex/hack/hack.sty
-        - hack/tex/latex/hack/t1hack.fd
-        - hack/fonts/map/dvips/hack/hack.map
-        - hack/fonts/enc/dvips/hack/hack-t1.enc
-        - hack/fonts/tfm/public/hack/hackr8t.tfm
-        - hack/fonts/tfm/public/hack/hackr8t--base.tfm
-        - hack/fonts/tfm/public/hack/hackb8t.tfm
-        - hack/fonts/tfm/public/hack/hackb8t--base.tfm
-        - hack/fonts/tfm/public/hack/hacki8t.tfm
-        - hack/fonts/tfm/public/hack/hacki8t--base.tfm
-        - hack/fonts/tfm/public/hack/hackbi8t.tfm
-        - hack/fonts/tfm/public/hack/hackbi8t--base.tfm
-        - hack/fonts/vf/public/hack/hackr8t.vf
-        - hack/fonts/vf/public/hack/hackb8t.vf
-        - hack/fonts/vf/public/hack/hacki8t.vf
-        - hack/fonts/vf/public/hack/hackbi8t.vf
         - hack/fonts/truetype/public/hack/Hack-Regular.ttf
         - hack/fonts/truetype/public/hack/Hack-Bold.ttf
         - hack/fonts/truetype/public/hack/Hack-Italic.ttf
