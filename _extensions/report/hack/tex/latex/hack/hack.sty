@@ -1,0 +1,44 @@
+\ProvidesPackage{hack}[2026/08/13 Hack monospace font for pdfLaTeX/XeLaTeX/LuaLaTeX]
+\RequirePackage{iftex}
+
+\newif\ifhack@ligatures
+\DeclareOption{ligatures}{\hack@ligaturestrue}
+\ProcessOptions\relax
+
+\ifhack@ligatures
+  \ifPDFTeX
+    \PackageError{hack}{The `ligatures' option requires XeLaTeX or LuaLaTeX}%
+      {Hack FC Ligatured CCG's programming ligatures are OpenType `calt'\MessageBreak
+       substitutions, which pdfLaTeX's 8-bit T1 fonts cannot represent.\MessageBreak
+       Compile this document with xelatex or lualatex instead, or drop\MessageBreak
+       the `ligatures' option to use plain Hack under pdfLaTeX.}
+  \else
+    \RequirePackage{fontspec}
+    \setmonofont{HackFCLigaturedCCG-Regular.ttf}[
+      BoldFont = HackFCLigaturedCCG-Bold.ttf,
+      ItalicFont = HackFCLigaturedCCG-Italic.ttf,
+      BoldItalicFont = HackFCLigaturedCCG-BoldItalic.ttf,
+    ]
+    % The `verbatim' environment's \@noligs inserts a \kern between
+    % `,'<>-, and the character before it, purely to stop legacy TeX
+    % ligatures (e.g. `` -> a smart quote) in old 8-bit fonts. Hack has
+    % no such ligatures, but the kern also breaks the glyph run that
+    % XeTeX/LuaTeX needs to apply this font's `calt' programming
+    % ligatures (e.g. <- and |>), so disable it here.
+    \let\@noligs\relax
+  \fi
+\else
+  \ifPDFTeX
+    \RequirePackage[T1]{fontenc}
+    \pdfmapfile{+hack.map}
+    \renewcommand{\ttdefault}{hack}
+  \else
+    \RequirePackage{fontspec}
+    \setmonofont{Hack-Regular.ttf}[
+      BoldFont = Hack-Bold.ttf,
+      ItalicFont = Hack-Italic.ttf,
+      BoldItalicFont = Hack-BoldItalic.ttf,
+    ]
+  \fi
+\fi
+\endinput
