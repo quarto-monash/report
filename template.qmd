@@ -10,16 +10,29 @@ phone: (03) 9905 2478
 email: BusEco-Econometrics@monash.edu
 organization: Acme Corporation
 bibliography: references.bib
-format: report-typst # Use report-pdf for the latex version
+format:
+  report-typst: # Use report-pdf for the latex version
+    ligatures: true
 ---
 
 # Introduction
 
-In a famous paper, @BC64 introduced a family of transformations \dots
+Kernel density estimation is a non-parametric way to estimate the probability density function of a random variable [@Rice2007, p390].
+The kernel density estimate (KDE) is defined as:
+$$
+  \hat{f}(x) = \frac{1}{nh} \sum_{i = 1}^n K\left(\frac{x - x_i}{h}\right),
+$$ {#eq-kde}
+where $K$ is the kernel function, $h$ is the bandwidth, and $x_1, x_2, \ldots, x_n$ are the observed data points.
+A common kernel function is the Gaussian kernel, defined as:
+$$
+  K(u) = \frac{1}{\sqrt{2\pi}} e^{-u^2/2}.
+$$
+
+@fig-density shows a KDE computed using @eq-kde with a Gaussian kernel, and $h$ chosen using the Sheather-Jones method [@SJ91].
 
 ```{r}
 #| label: fig-density
-#| fig-cap: Simulated data from a N(0,1) distribution.
+#| fig-cap: A kernel density estimate obtained using 200 simulated data points from a N(0,1) distribution.
 #| echo: true
 
 library(tidyverse)
@@ -30,10 +43,3 @@ df |>
   geom_density(bw = "sj") +
   geom_rug()
 ```
-
-@fig-density shows a kernel density estimate of simulated data from a N(0,1) distribution.
-The sample variance is given by
-$$
-  s^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i-\bar{x})^2 = `r round(sd(df$x), 2)`.
-$$ {#eq-s2}
-Note that @eq-s2 is an unbiased estimate of the variance, but it is not the maximum likelihood estimate [@Rice2007, p.269].
