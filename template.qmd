@@ -20,6 +20,7 @@ In a famous paper, @BC64 introduced a family of transformations \dots
 ```{r}
 #| label: fig-density
 #| fig-cap: Simulated data from a N(0,1) distribution.
+#| echo: true
 
 library(tidyverse)
 set.seed(2022 - 12 - 20)

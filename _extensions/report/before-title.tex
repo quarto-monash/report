@@ -6,11 +6,17 @@
 \captionsetup[table]{style=italic,format=hang,singlelinecheck=true}
 
 %% FONT
+\usepackage{iftex}
+\usepackage{bm,amsmath}
+\ifPDFTeX
+  \usepackage[charter]{mathdesign}
+\else
+  \usepackage[no-text]{xcharter-otf}
+\fi
 \usepackage{bera}
-\usepackage[charter]{mathdesign}
 %\usepackage[scale=0.9]{sourcecodepro}
 \usepackage[lf,t]{FiraSans}
-\usepackage{hack}
+\usepackage$if(ligatures)$[ligatures]$endif${hack}
 \usepackage{fontawesome}
 
 %% HEADERS AND FOOTERS
@@ -32,7 +38,6 @@
 \renewcommand{\footrulewidth}{0pt}}
 
 %% MATHS
-\usepackage{bm,amsmath}
 \allowdisplaybreaks
 
 %% GRAPHICS

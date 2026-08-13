@@ -15,6 +15,7 @@ contributes:
       linestretch: 1.5
       fig-height: 5
       fig-width: 8
+      ligatures: false
       knitr:
         opts_chunk:
           echo: false
@@ -28,7 +29,7 @@ contributes:
         - AACSB.png
     pdf:
       documentclass: article
-      pdf-engine: pdflatex
+      pdf-engine: xelatex
       geometry:
       - top=2.4cm
       - bottom=2.4cm
@@ -62,6 +63,10 @@ contributes:
         - hack/fonts/truetype/public/hack/Hack-Bold.ttf
         - hack/fonts/truetype/public/hack/Hack-Italic.ttf
         - hack/fonts/truetype/public/hack/Hack-BoldItalic.ttf
+        - hack/fonts/truetype/public/hack/HackFCLigaturedCCG-Regular.ttf
+        - hack/fonts/truetype/public/hack/HackFCLigaturedCCG-Bold.ttf
+        - hack/fonts/truetype/public/hack/HackFCLigaturedCCG-Italic.ttf
+        - hack/fonts/truetype/public/hack/HackFCLigaturedCCG-BoldItalic.ttf
     typst:
       template-partials:
         - typst-template.typ
