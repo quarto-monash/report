@@ -1,11 +1,11 @@
 ---
 title: "Expert advice from experts"
 author:
-- name: Professor Marie Curie
-  degrees: Nobel Prize, PhD
-  email: mcurie.notreal@gmail.com
-- name: Dr Pierre Curie
-  degrees: Nobel Prize, PhD
+  - name: Professor Marie Curie
+    degrees: Nobel Prize, PhD
+    email: mcurie.notreal@gmail.com
+  - name: Dr Pierre Curie
+    degrees: Nobel Prize, PhD
 phone: (03) 9905 2478
 email: BusEco-Econometrics@monash.edu
 organization: Acme Corporation
@@ -20,16 +20,18 @@ In a famous paper, @BC64 introduced a family of transformations \dots
 ```{r}
 #| label: fig-density
 #| fig-cap: Simulated data from a N(0,1) distribution.
+
 library(tidyverse)
-set.seed(2022-12-20)
+set.seed(2022 - 12 - 20)
 df <- tibble(x = rnorm(200))
 df |>
-  ggplot(aes(x=x)) +
+  ggplot(aes(x = x)) +
   geom_density(bw = "sj") +
   geom_rug()
 ```
 
-@fig-density shows a kernel density estimate of simulated data from a N(0,1) distribution. The sample variance is given by
+@fig-density shows a kernel density estimate of simulated data from a N(0,1) distribution.
+The sample variance is given by
 $$
   s^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i-\bar{x})^2 = `r round(sd(df$x), 2)`.
 $$ {#eq-s2}
