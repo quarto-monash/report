@@ -1,0 +1,12 @@
+\ProvidesFile{t1hack.fd}[2026/08/13 Hack monospace font definitions]
+\DeclareFontFamily{T1}{hack}{}
+\DeclareFontShape{T1}{hack}{m}{n}{<-> hackr8t}{}
+\DeclareFontShape{T1}{hack}{m}{it}{<-> hacki8t}{}
+\DeclareFontShape{T1}{hack}{m}{sl}{<->ssub * hack/m/it}{}
+\DeclareFontShape{T1}{hack}{b}{n}{<-> hackb8t}{}
+\DeclareFontShape{T1}{hack}{b}{it}{<-> hackbi8t}{}
+\DeclareFontShape{T1}{hack}{b}{sl}{<->ssub * hack/b/it}{}
+\DeclareFontShape{T1}{hack}{bx}{n}{<->ssub * hack/b/n}{}
+\DeclareFontShape{T1}{hack}{bx}{it}{<->ssub * hack/b/it}{}
+\DeclareFontShape{T1}{hack}{bx}{sl}{<->ssub * hack/b/it}{}
+\endinput
