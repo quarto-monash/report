@@ -5,7 +5,9 @@
 # Monash Report Format Template
 
 This is a Quarto template that assists you in creating a Monash
-University report.
+University report. Two versions of the template are available, one using
+LaTeX (`report-pdf`), and one using Typst (`report-typst`). The latter
+is much faster to render.
 
 ## Creating a new report
 

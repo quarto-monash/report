@@ -1,16 +1,33 @@
 title: Monash Working Paper Format Template
 author: Rob J Hyndman
-version: 2.0.0
+version: 2.1.0
 quarto-required: ">= 1.4.0"
 contributes:
   formats:
-    pdf:
-      documentclass: article
+    common:
       papersize: a4
       fontsize: 11pt
       date: today
       date-format: "D MMMM YYYY"
       toc: false
+      number-sections: true
+      number-depth: 2
+      linestretch: 1.5
+      fig-height: 5
+      fig-width: 8
+      knitr:
+        opts_chunk:
+          echo: false
+          warning: false
+          message: false
+      format-resources:
+        - monash2.png
+        - MBSportrait.jpg
+        - EQUIS.png
+        - AMBA.png
+        - AACSB.png
+    pdf:
+      documentclass: article
       pdf-engine: pdflatex
       geometry:
       - top=2.4cm
@@ -21,22 +38,20 @@ contributes:
       cite-method: biblatex
       biblio-style: authoryear-comp
       colorlinks: true
-      fig-height: 5
-      fig-width: 8
-      number-sections: true
-      number-depth: 2
-      linestretch: 1.5
-      knitr:
-        opts_chunk:
-          echo: false
-          warning: false
-          message: false
       template-partials:
         - "before-title.tex"
         - "title.tex"
-      format-resources:
-        - monash2.png
-        - MBSportrait.jpg
-        - EQUIS.png
-        - AMBA.png
-        - AACSB.png
+    typst:
+      template-partials:
+        - typst-template.typ
+        - typst-show.typ
+      lang: en
+      region: AU
+      bibliographystyle: apa
+      margin:
+        top: 2.4cm
+        bottom: 2.4cm
+        left: 2.5cm
+        right: 2.5cm
+      font-paths:
+        - fonts
