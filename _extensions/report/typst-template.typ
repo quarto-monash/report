@@ -39,7 +39,6 @@
   fontsize: 11pt,
   linestretch: 1.5,
   heading-family: "Fira Sans",
-  mono-family: "Hack",
   sectionnumbering: none,
   toc: false,
   toc_title: none,
@@ -57,7 +56,6 @@
   set text(lang: lang, region: region, font: font, size: fontsize)
   set par(justify: true, leading: linestretch * 0.65em, spacing: linestretch * 1em)
   show math.equation: set text(font: "XCharter Math")
-  show raw: set text(font: mono-family)
   show link: set text(fill: link-blue)
   show ref: set text(fill: link-blue)
   show cite: set text(fill: link-blue)

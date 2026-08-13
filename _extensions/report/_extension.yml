@@ -15,7 +15,6 @@ contributes:
       linestretch: 1.5
       fig-height: 5
       fig-width: 8
-      ligatures: false
       knitr:
         opts_chunk:
           echo: false
@@ -42,17 +41,6 @@ contributes:
       template-partials:
         - "before-title.tex"
         - "title.tex"
-      latex-input-paths:
-        - hack/tex/latex/hack
-      format-resources:
-        - hack/fonts/truetype/public/hack/Hack-Regular.ttf
-        - hack/fonts/truetype/public/hack/Hack-Bold.ttf
-        - hack/fonts/truetype/public/hack/Hack-Italic.ttf
-        - hack/fonts/truetype/public/hack/Hack-BoldItalic.ttf
-        - hack/fonts/truetype/public/hack/HackFCLigaturedCCG-Regular.ttf
-        - hack/fonts/truetype/public/hack/HackFCLigaturedCCG-Bold.ttf
-        - hack/fonts/truetype/public/hack/HackFCLigaturedCCG-Italic.ttf
-        - hack/fonts/truetype/public/hack/HackFCLigaturedCCG-BoldItalic.ttf
     typst:
       template-partials:
         - typst-template.typ
@@ -67,4 +55,3 @@ contributes:
         right: 2.5cm
       font-paths:
         - fonts
-        - hack/fonts/truetype/public/hack

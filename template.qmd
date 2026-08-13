@@ -10,9 +10,7 @@ phone: (03) 9905 2478
 email: BusEco-Econometrics@monash.edu
 organization: Acme Corporation
 bibliography: references.bib
-format:
-  report-typst: # Use report-pdf for the latex version
-    ligatures: true
+format: report-typst # Use report-pdf for the latex version
 ---
 
 # Introduction

@@ -69,8 +69,5 @@ $if(toc-indent)$
   toc_indent: $toc-indent$,
 $endif$
   toc_depth: $toc-depth$,
-$if(ligatures)$
-  mono-family: "Hack FC Ligatured CCG",
-$endif$
   doc,
 )
